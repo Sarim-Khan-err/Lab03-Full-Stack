@@ -1,8 +1,336 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 03 — Bootstrap Studio</title><link rel="stylesheet" href="vendor/bootstrap.min.css"><style>body{background:#f1efe6;color:#182e28;font-family:system-ui,sans-serif}.brand{font-weight:800;letter-spacing:-2px}h1{font-size:clamp(3rem,8vw,7rem);font-weight:700;letter-spacing:-.07em;line-height:1}h1 em{font-family:Georgia,serif;font-weight:400}.card{border:1px solid #d2d6cb;border-radius:20px;background:#fffdf7;transition:transform .2s}.card:hover{transform:translateY(-5px)}.cover{height:160px;display:flex;align-items:center;justify-content:center;font-size:45px;font-weight:800;letter-spacing:-2px;border-radius:19px 19px 0 0}.card-body{padding:24px}.card h2{font-size:22px}.card p{font-size:14px;color:#627268}.project-index{font:12px monospace;letter-spacing:2px}.btn-dark{background:#182e28;border-color:#182e28}.tag{font-size:11px;background:#e8eddf;border-radius:30px;padding:5px 10px}footer{font-size:12px;color:#647168}@media(prefers-reduced-motion:reduce){.card{transition:none}}</style></head><body><div class="container py-4"><header class="d-flex justify-content-between align-items-center border-bottom pb-3"><a href="index.html" class="brand fs-3 text-dark text-decoration-none">LAB / 03</a><span class="small">Sarim Khan · Full Stack Web Development</span></header><main><section class="py-5"><p class="project-index mb-4">TASK 03 / BOOTSTRAP 5.3.8</p><div class="row align-items-end g-4"><div class="col-lg-8"><h1>Six projects.<br><em>A new framework.</em></h1></div><div class="col-lg-4"><p class="text-secondary mb-0">Lab 2, rebuilt with Bootstrap’s responsive grid and components. Plus Fitcheck: a streetwear store with a fresh visual drop.</p></div></div></section><section class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 pb-5" aria-label="Projects">
-<article class="col"><div class="card h-100"><div class="cover" style="background:#c6d900">FIT CHECK</div><div class="card-body d-flex flex-column"><span class="project-index text-secondary mb-2">PROJECT 01</span><h2>Streetwear storefront</h2><p>Shop, filter products, manage a cart and try the demo checkout.</p><div class="mb-4"><span class="tag">Cards · Modals · Forms</span></div><a class="btn btn-dark mt-auto" href="FITCHECK.html">Open project ↗</a></div></div></article>
-<article class="col"><div class="card h-100"><div class="cover" style="background:#dbe8fc">facebook</div><div class="card-body d-flex flex-column"><span class="project-index text-secondary mb-2">PROJECT 02</span><h2>Facebook feed</h2><p>A mobile feed with stories, local photos and bottom navigation.</p><div class="mb-4"><span class="tag">Navigation · Cards · Utilities</span></div><a class="btn btn-dark mt-auto" href="facebook.html">Open project ↗</a></div></div></article>
-<article class="col"><div class="card h-100"><div class="cover" style="background:#e3dfd5">IEEE</div><div class="card-body d-flex flex-column"><span class="project-index text-secondary mb-2">PROJECT 03</span><h2>Conference template</h2><p>A two-column academic paper with six authors and print styles.</p><div class="mb-4"><span class="tag">Grid · Tables · Buttons</span></div><a class="btn btn-dark mt-auto" href="ieee.html">Open project ↗</a></div></div></article>
-<article class="col"><div class="card h-100"><div class="cover" style="background:#e6edc8">08:00 →</div><div class="card-body d-flex flex-column"><span class="project-index text-secondary mb-2">PROJECT 04</span><h2>Class timetable</h2><p>A responsive weekly schedule for BSCS-V-A, Shift I.</p><div class="mb-4"><span class="tag">Tables · Responsive overflow</span></div><a class="btn btn-dark mt-auto" href="timetable.html">Open project ↗</a></div></div></article>
-<article class="col"><div class="card h-100"><div class="cover" style="background:#f0d4bd">SARIM KHAN</div><div class="card-body d-flex flex-column"><span class="project-index text-secondary mb-2">PROJECT 05</span><h2>Personal portfolio</h2><p>Creative work, experience, filmmaking process and contact details.</p><div class="mb-4"><span class="tag">Grid · Navbar · Badges</span></div><a class="btn btn-dark mt-auto" href="portfolio/index.html">Open project ↗</a></div></div></article>
-<article class="col"><div class="card h-100"><div class="cover" style="background:#d2f96a">STYLE / SHIFT</div><div class="card-body d-flex flex-column"><span class="project-index text-secondary mb-2">PROJECT 06</span><h2>HTML & CSS arcade</h2><p>Six concept challenges, instant feedback and an interactive grid lab.</p><div class="mb-4"><span class="tag">Grid · Toggle controls · Buttons</span></div><a class="btn btn-dark mt-auto" href="css-arcade/index.html">Open project ↗</a></div></div></article>
-</section></main><footer class="border-top py-4 d-flex justify-content-between flex-wrap gap-2"><span>Task 03 · Bootstrap edition</span><span>Original Lab 2 files preserved separately.</span></footer></div><script src="vendor/bootstrap.bundle.min.js"></script></body></html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><link href="vendor/bootstrap.min.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>FITCHECK — Everyday, considered.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--cream:#f4efe0;--lime:#c6d900;--peach:#ffd9c2;--orange:#ff9153;--pink:#fbd3ef;--blue:#cfe3f7;--ink:#0f2d24}
+body{font-family:'Bricolage Grotesque',sans-serif;background:var(--cream);color:var(--ink)}
+h1,h2,h3,.brand{font-weight:800;letter-spacing:-.03em}
+.brand{font-size:1.6rem;color:var(--ink)!important}
+.brand span{display:inline-block;width:.8em;height:.8em;background:var(--orange);border-radius:50%;margin:0 2px}
+.btn-ink{background:var(--ink);color:#fff;border-radius:50px;padding:.55rem 1.4rem;font-weight:700;border:0}
+.btn-ink:hover{background:#1c4a3c;color:#fff}
+.btn-lime{background:var(--lime);color:var(--ink);border-radius:50px;font-weight:700;border:0}
+.btn-lime:hover{background:#d8ec1a}
+.pill{border-radius:50px;background:#fff;border:0;font-weight:600}
+.hero{position:relative;overflow:hidden;border-radius:32px;background:var(--lime);min-height:520px}
+.hero h1{font-size:clamp(3rem,9vw,7rem);line-height:.9}
+.dot{display:inline-block;width:.7em;height:.7em;background:var(--orange);border-radius:50%}
+.shape{position:absolute;z-index:0}
+.tri{right:-40px;top:-30px;width:380px;height:380px;background:var(--pink);clip-path:polygon(0 0,100% 0,100% 100%)}
+.plus{right:8%;bottom:8%;width:200px;height:200px;background:var(--orange);clip-path:polygon(33% 0,66% 0,66% 33%,100% 33%,100% 66%,66% 66%,66% 100%,33% 100%,33% 66%,0 66%,0 33%,33% 33%)}
+.blob{left:-60px;bottom:-60px;width:220px;height:220px;background:var(--blue);border-radius:50%}
+.hero .content{position:relative;z-index:1}
+.marquee{background:var(--ink);color:var(--lime);border-radius:50px;font-weight:800;padding:.6rem 1rem;overflow:hidden;white-space:nowrap}
+.marquee div{display:inline-block;animation:m 18s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+.sec-title{font-size:clamp(2.5rem,6vw,4.5rem)}
+.pcard{border:0;border-radius:28px;overflow:hidden;transition:transform .2s}
+.pcard:hover{transform:translateY(-6px) rotate(-1deg)}
+.pcard img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:22px}
+.pimg{padding:12px 12px 0}
+.tag{background:#fff;border-radius:50px;font-size:.75rem;font-weight:700;padding:.2rem .7rem}
+.rev{border-radius:36px 36px 36px 6px;padding:1.5rem;height:100%}
+.stars{color:var(--orange);letter-spacing:2px}
+.panel{background:#fff;border-radius:28px;padding:1.5rem}
+.form-control,.form-select{border-radius:14px;border:2px solid var(--ink);background:#fffdf6}
+.form-control:focus,.form-select:focus{box-shadow:0 0 0 .25rem rgba(198,217,0,.5);border-color:var(--ink)}
+.qty{display:inline-flex;align-items:center;gap:.6rem;background:var(--cream);border-radius:50px;padding:.15rem .5rem}
+.qty button{border:0;background:var(--ink);color:#fff;border-radius:50%;width:28px;height:28px;font-weight:800;line-height:1}
+.badge-cart{background:var(--orange);color:var(--ink)}
+.modal-content{border-radius:28px;background:var(--cream)}
+.nav-pills .nav-link{color:var(--ink);border-radius:50px;font-weight:700}
+.nav-pills .nav-link.active{background:var(--ink)}
+.view{display:none}.view.on{display:block}
+footer{background:var(--ink);color:var(--cream);border-radius:32px 32px 0 0}
+@media(max-width:991px){.hero{display:block!important}.hero-look{position:relative;right:auto;top:auto;width:min(85%,350px);height:360px;margin:32px auto 8px;transform:rotate(3deg)}.hero .content{width:100%}}@media(max-width:420px){.hero-look{height:290px;width:90%}}</style>
+<style id="task03-bootstrap-adaptation">.task03-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 18px;background:#f7f7f2;color:#343a40;font-family:system-ui,sans-serif;font-size:12px}.task03-bar a{text-decoration:none}.task03-bar .btn{font-size:12px}body{margin:0} .hero-look{position:absolute;right:4%;top:9%;width:32%;height:83%;transform:rotate(5deg);border:8px solid #fff9;border-radius:130px 130px 24px 24px;overflow:hidden;box-shadow:12px 14px 0 #0f2d2422;z-index:0}.hero-look img{width:100%;height:100%;object-fit:cover}.hero-look figcaption{position:absolute;bottom:18px;left:10%;right:10%;text-align:center}.hero .content{z-index:1}.hero h1{font-size:clamp(3rem,7vw,6rem)}.pcard img{background:#e8e4d8}.nav-pills .nav-link.active{color:white}@media(prefers-reduced-motion:reduce){.marquee div{animation:none}.pcard{transition:none}}@media(max-width:991px){.hero{display:block!important}.hero-look{position:relative;right:auto;top:auto;width:min(85%,350px);height:360px;margin:32px auto 8px;transform:rotate(3deg)}.hero .content{width:100%}}@media(max-width:420px){.hero-look{height:290px;width:90%}}</style><style id="fitcheck-studio">
+:root{--cream:#f5f2eb;--lime:#c4ce9d;--peach:#e7dfd3;--orange:#a2ad84;--pink:#ded8cb;--blue:#dce1d6;--ink:#26342c}
+.hero{background:#e8e2d7;border-radius:12px;min-height:610px}.hero h1{font-size:clamp(3rem,6.5vw,6.2rem);line-height:.99;font-weight:700;letter-spacing:-.065em}.hero .content{width:55%;padding-right:20px}.hero .content p{font-size:1.05rem!important;max-width:390px}.hero .tag{background:transparent;padding:0;font-size:.68rem;letter-spacing:.16em}.hero-look{border:0;border-radius:8px;box-shadow:none;transform:none;right:2%;top:4%;height:92%;width:42%;margin:0}.hero-look img{object-fit:contain;background:#d8ccbb}.hero-look figcaption{font-size:.62rem;letter-spacing:.12em;background:#f5f2ebdb;border-radius:2px}.marquee{border-radius:0;font-size:.75rem;letter-spacing:.14em;padding:14px}.marquee div{animation:none}.sec-title{font-weight:700;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.05em}.pcard{border-radius:8px;background:#e9e4da!important;transition:transform .2s}.pcard:hover{transform:translateY(-4px)}.pimg{padding:0}.pcard img{border-radius:8px 8px 0 0;object-fit:contain;aspect-ratio:4/5;background:#d8ccbb}.pcard .card-body{padding:18px}.pcard .tag{background:transparent;border:1px solid #a4aa9670;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase}.pcard h6{font-size:.98rem}.btn-ink{border-radius:5px}.pill,.btn-lime{border-radius:5px}.rev{border-radius:8px}.panel{border-radius:12px}.stars{color:#797f54}footer{border-radius:12px 12px 0 0}.brand span{width:.45em;height:.45em;vertical-align:middle}.hero .dot{display:none}
+@media(max-width:991px){.hero{min-height:0}.hero .content{width:100%;padding:0!important}.hero-look{position:relative;width:100%;height:auto;aspect-ratio:4/5;right:auto;top:auto;margin:28px auto 0;transform:none}.hero h1{font-size:clamp(3rem,10vw,5rem)}.hero-look img{height:100%;width:100%}}
+@media(max-width:575px){.pcard .card-body{padding:12px}.pcard h6{font-size:.82rem}.pcard .btn{font-size:.72rem}.hero{padding:24px!important}}
+</style></head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top py-3" style="background:var(--cream)">
+<div class="container">
+<a class="navbar-brand brand" href="#" onclick="go('home');return false">FIT<span></span>CHECK</a>
+<button aria-controls="nv" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0" data-bs-target="#nv" data-bs-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="nv">
+<ul class="navbar-nav mx-auto fw-bold">
+<li class="nav-item"><a class="nav-link" href="#" onclick="go('home','shop');return false">Shop</a></li>
+<li class="nav-item"><a class="nav-link" href="#" onclick="go('home','reviews');return false">Reviews</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2" id="authBox"></div>
+<button class="btn pill ms-lg-2 mt-2 mt-lg-0" onclick="go('cart')">Cart <span class="badge badge-cart rounded-pill" id="cartCount">0</span></button>
+</div>
+</div>
+</nav>
+<main class="container pb-5">
+<!-- HOME VIEW -->
+<div class="view on" id="v-home">
+<!-- HERO -->
+<section class="hero p-4 p-md-5 d-flex align-items-center mt-2">
+
+<div class="content ps-md-4 col-lg-7">
+<span class="tag mb-3 d-inline-block">THE EVERYDAY COLLECTION / 01</span>
+<h1>Everyday.<br/>Considered.</h1>
+<p class="fs-5 mt-3 col-md-10">Relaxed silhouettes. Quiet detail. Pieces that feel like you, wherever the day goes.</p>
+<a class="btn btn-ink btn-lg mt-2" href="#shop" onclick="go('home','shop');return false">Shop the drop</a>
+</div>
+<figure class="hero-look"><img alt="Fitcheck studio collection: charcoal hoodie, olive cargos, chocolate tee and relaxed denim" height="1250" src="assets/fitcheck/generated/hero.png" width="1000"/><figcaption class="tag">LESS NOISE. MORE YOU.</figcaption></figure></section>
+<div class="marquee my-4"><div>CONSIDERED ESSENTIALS · RELAXED BY DESIGN · FREE DELIVERY OVER Rs. 8000 · CONSIDERED ESSENTIALS · RELAXED BY DESIGN · FREE DELIVERY OVER Rs. 8000 · </div></div>
+<!-- PRODUCT LISTING -->
+<section class="pt-4" id="shop">
+<h2 class="sec-title text-center mb-1">The everyday edit</h2>
+<p class="text-center mb-4">Eight pieces. One point of view.</p>
+<div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="filters"></div>
+<div class="row g-4" id="products"></div>
+</section>
+<!-- REVIEWS -->
+<section class="pt-5 mt-4" id="reviews">
+<h2 class="sec-title text-center mb-4">Worn on repeat</h2>
+<div class="row g-4" id="reviewList"></div>
+<div class="panel mt-4 col-lg-6 mx-auto">
+<h5 class="fw-bold">Leave a review</h5>
+<form class="row g-2" id="revForm">
+<div class="col-md-8"><input aria-label="Your name" class="form-control" id="rvName" placeholder="Your name" required=""/></div>
+<div class="col-md-4"><select aria-label="rvStars" class="form-select" id="rvStars"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+<div class="col-12"><textarea aria-label="How was the fit?" class="form-control" id="rvText" placeholder="How was the fit?" required="" rows="2"></textarea></div>
+<div class="col-12"><button class="btn btn-ink">Post review</button></div>
+</form>
+</div>
+</section>
+</div>
+<!-- CART VIEW -->
+<div class="view" id="v-cart">
+<h2 class="sec-title mt-3">Your cart</h2>
+<div class="row g-4">
+<div class="col-lg-8"><div class="panel" id="cartItems"></div></div>
+<div class="col-lg-4"><div class="panel" id="cartSummary" style="background:var(--peach)"></div></div>
+</div>
+</div>
+<!-- CHECKOUT VIEW -->
+<div class="view" id="v-checkout">
+<h2 class="sec-title mt-3">Checkout</h2>
+<div class="row g-4">
+<div class="col-lg-7">
+<form class="panel needs-validation" id="coForm" novalidate="">
+<h5 class="fw-bold mb-3">Delivery details</h5>
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label" for="coName">Full name</label><input aria-label="coName" class="form-control" id="coName" required=""/></div>
+<div class="col-md-6"><label class="form-label" for="coPhone">Phone</label><input aria-label="coPhone" class="form-control" id="coPhone" pattern="[0-9+\- ]{10,15}" required=""/></div>
+<div class="col-12"><label class="form-label" for="coAddr">Address</label><input aria-label="coAddr" class="form-control" id="coAddr" required=""/></div>
+<div class="col-md-6"><label class="form-label" for="coCity">City</label><input aria-label="coCity" class="form-control" id="coCity" required=""/></div>
+<div class="col-md-6"><label class="form-label" for="coPay">Payment</label>
+<select aria-label="coPay" class="form-select" id="coPay"><option>Cash on delivery</option><option>Card</option><option>Easypaisa / JazzCash</option></select></div>
+</div>
+<button class="btn btn-ink btn-lg mt-4 w-100">Place order</button>
+</form>
+</div>
+<div class="col-lg-5"><div class="panel" id="coSummary" style="background:var(--pink)"></div></div>
+</div>
+</div>
+</main>
+<footer class="text-center py-5 mt-5">
+<div class="brand fs-2" style="color:var(--lime)!important">FIT<span></span>CHECK</div>
+<p class="mb-0 mt-2 small">FITCHECK — Everyday, considered. Concept store · AI-generated collection imagery.</p>
+</footer>
+<!-- AUTH MODAL -->
+<div class="modal fade" id="authModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content p-3"><button aria-label="Close sign in" class="btn-close ms-auto" data-bs-dismiss="modal" type="button"></button><p class="small text-secondary mt-2">Browser-only classroom demo. Use made-up credentials.</p>
+<ul class="nav nav-pills mb-3 justify-content-center">
+<li class="nav-item"><button class="nav-link active" data-bs-target="#tLogin" data-bs-toggle="pill" id="btnLoginTab">Login</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-target="#tSignup" data-bs-toggle="pill" id="btnSignupTab">Sign up</button></li>
+</ul>
+<div class="tab-content">
+<form class="tab-pane fade show active" id="tLogin">
+<input aria-label="Email" class="form-control mb-2" id="lgEmail" placeholder="Email" required="" type="email"/>
+<input aria-label="Password" class="form-control mb-3" id="lgPass" placeholder="Password" required="" type="password"/>
+<div class="text-danger small mb-2" id="lgErr"></div>
+<button class="btn btn-ink w-100">Log in</button>
+</form>
+<form class="tab-pane fade" id="tSignup">
+<input aria-label="Name" class="form-control mb-2" id="suName" placeholder="Name" required=""/>
+<input aria-label="Email" class="form-control mb-2" id="suEmail" placeholder="Email" required="" type="email"/>
+<input aria-label="Password (min 6 characters)" class="form-control mb-3" id="suPass" minlength="6" placeholder="Password (min 6 characters)" required="" type="password"/>
+<div class="text-danger small mb-2" id="suErr"></div>
+<button class="btn btn-lime w-100 py-2">Create account</button>
+</form>
+</div>
+</div></div>
+</div>
+<!-- ORDER MODAL -->
+<div class="modal fade" id="doneModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4 text-center">
+<h2 class="sec-title" style="font-size:3rem">Order placed <span class="dot"></span></h2>
+<p id="doneMsg"></p>
+<button class="btn btn-ink" data-bs-dismiss="modal" onclick="go('home')">Keep shopping</button>
+</div></div>
+</div>
+<!-- TOAST -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+<div class="toast text-bg-dark border-0 rounded-4" id="toast"><div class="toast-body fw-bold" id="toastMsg"></div></div>
+</div>
+<script src="vendor/bootstrap.bundle.min.js"></script><script>
+// ---------- DATA ----------
+const COLORS=['#e9e4da','#e9e4da','#e9e4da','#e9e4da'];
+// Local fashion photos; see assets/fitcheck/SOURCES.txt. Styling imagery for a student demo.
+const PRODUCT_IMAGES={1:'hoodie',2:'cargo',3:'tee',4:'baby-tee',5:'denim',6:'jacket',7:'vest',8:'cap'};
+const PRODUCTS=[
+ {id:1,n:'Oversized Hoodie',cat:'Hoodies',p:4500,k:'hoodie,streetwear'},
+ {id:2,n:'Relaxed Cargo Pants',cat:'Bottoms',p:5200,k:'cargo,pants'},
+ {id:3,n:'Heavyweight Ecru Tee',cat:'Tees',p:2200,k:'graphic,tshirt'},
+ {id:4,n:'Chocolate Rib Baby Tee',cat:'Tees',p:1800,k:'crop,top,fashion'},
+ {id:5,n:'Straight Leg Denim',cat:'Bottoms',p:5800,k:'wide,jeans'},
+ {id:6,n:'Studio Bomber Jacket',cat:'Jackets',p:8900,k:'varsity,jacket'},
+ {id:7,n:'Matte Puffer Vest',cat:'Jackets',p:6400,k:'puffer,vest'},
+ {id:8,n:'Washed Olive Cap',cat:'Accessories',p:1500,k:'bucket,hat'}
+];
+const SEED_REVIEWS=[
+ {n:'Hamna',s:5,t:'Hoodie is SO soft. Got compliments all week, no cap.'},
+ {n:'Zain',s:5,t:'Denim is an everyday staple. Love the relaxed styling.'},
+ {n:'Areeba',s:4,t:'Love the color palette. The layers work really well together.'}
+];
+
+// ---------- HELPERS ----------
+const $=s=>document.querySelector(s);
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const rs=n=>'Rs. '+n.toLocaleString();
+const toast=m=>{$('#toastMsg').textContent=m;bootstrap.Toast.getOrCreateInstance($('#toast'),{delay:1800}).show()};
+let cart=store.get('cart',{}), user=store.get('session',null), filter='All';
+const modal=id=>bootstrap.Modal.getOrCreateInstance($(id));
+
+// ---------- NAV / VIEWS ----------
+function go(view,anchor){
+ document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+view));
+ if(view==='cart')renderCart(); if(view==='checkout')renderCheckout();
+ if(anchor)setTimeout(()=>document.getElementById(anchor).scrollIntoView({behavior:'smooth'}),50); else scrollTo(0,0);
+ bootstrap.Collapse.getInstance($('#nv'))?.hide();
+}
+function renderAuth(){
+ $('#authBox').innerHTML=user
+  ?`<span class="fw-bold">hey, ${esc(user.name.split(' ')[0])} ✦</span><button class="btn pill btn-sm" onclick="logout()">Log out</button>`
+  :`<button class="btn pill btn-sm" onclick="openAuth('login')">Login</button><button class="btn btn-ink btn-sm" onclick="openAuth('signup')">Sign up</button>`;
+}
+function openAuth(t){bootstrap.Tab.getOrCreateInstance($(t==='login'?'#btnLoginTab':'#btnSignupTab')).show();modal('#authModal').show()}
+function logout(){user=null;store.set('session',null);renderAuth();toast('Logged out');go('home')}
+
+// ---------- SIGNUP / LOGIN ----------
+// Demo only: users live in this browser's localStorage, no real backend.
+$('#tSignup').addEventListener('submit',e=>{
+ e.preventDefault();const users=store.get('users',[]);
+ const email=$('#suEmail').value.trim().toLowerCase();
+ if($('#suPass').value.length<6)return $('#suErr').textContent='Password needs 6+ characters';
+ if(users.some(u=>u.email===email))return $('#suErr').textContent='Email already registered';
+ const u={name:$('#suName').value.trim(),email,pass:$('#suPass').value};
+ users.push(u);store.set('users',users);loginAs(u);
+});
+$('#tLogin').addEventListener('submit',e=>{
+ e.preventDefault();
+ const u=store.get('users',[]).find(u=>u.email===$('#lgEmail').value.trim().toLowerCase()&&u.pass===$('#lgPass').value);
+ if(!u)return $('#lgErr').textContent='Wrong email or password';
+ loginAs(u);
+});
+function loginAs(u){
+ user={name:u.name,email:u.email};store.set('session',user);renderAuth();
+ modal('#authModal').hide();toast('Welcome, '+u.name.split(' ')[0]+' ✦');
+ if($('#v-checkout').classList.contains('on'))renderCheckout();
+}
+
+// ---------- PRODUCTS ----------
+function renderFilters(){
+ const cats=['All',...new Set(PRODUCTS.map(p=>p.cat))];
+ $('#filters').innerHTML=cats.map(c=>`<button class="btn ${c===filter?'btn-ink':'pill'} btn-sm" onclick="filter='${c}';renderFilters();renderProducts()">${c}</button>`).join('');
+}
+function renderProducts(){
+ $('#products').innerHTML=PRODUCTS.filter(p=>filter==='All'||p.cat===filter).map((p,i)=>`
+  <div class="col-6 col-lg-3"><div class="card pcard h-100" style="background:${COLORS[i%4]}">
+   <div class="pimg"><img loading="lazy" alt="${p.n}" src="assets/fitcheck/generated/${PRODUCT_IMAGES[p.id]}.png"
+     onerror="this.onerror=null;this.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22600%22><rect width=%22100%%22 height=%22100%%22 fill=%22%23fff%22/></svg>')"></div>
+   <div class="card-body d-flex flex-column">
+    <span class="tag align-self-start mb-2">${p.cat}</span>
+    <h6 class="fw-bold mb-1">${p.n}</h6>
+    <div class="fw-bold mb-3">${rs(p.p)}</div>
+    <button class="btn btn-ink mt-auto btn-sm" onclick="addToCart(${p.id})">Add to cart +</button>
+   </div></div></div>`).join('');
+}
+
+// ---------- CART ----------
+function saveCart(){store.set('cart',cart);const n=Object.values(cart).reduce((a,b)=>a+b,0);$('#cartCount').textContent=n}
+function addToCart(id){cart[id]=(cart[id]||0)+1;saveCart();toast('Added to cart ✦')}
+function setQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];saveCart();renderCart()}
+function removeItem(id){delete cart[id];saveCart();renderCart()}
+function totals(){
+ const sub=Object.entries(cart).reduce((a,[id,q])=>a+PRODUCTS.find(p=>p.id==id).p*q,0);
+ const ship=sub===0||sub>=8000?0:250;return{sub,ship,total:sub+ship};
+}
+function renderCart(){
+ const rows=Object.entries(cart);
+ $('#cartItems').innerHTML=rows.length?rows.map(([id,q])=>{const p=PRODUCTS.find(x=>x.id==id);return `
+  <div class="d-flex align-items-center gap-3 py-3 border-bottom">
+   <img src="assets/fitcheck/generated/${PRODUCT_IMAGES[p.id]}.png" width="80" height="100" class="rounded-4" style="object-fit:cover" alt="${p.n}">
+   <div class="flex-grow-1"><div class="fw-bold">${p.n}</div><div class="small">${rs(p.p)}</div></div>
+   <div class="qty"><button onclick="setQty(${p.id},-1)">-</button><b>${q}</b><button onclick="setQty(${p.id},1)">+</button></div>
+   <div class="fw-bold d-none d-md-block" style="width:90px;text-align:right">${rs(p.p*q)}</div>
+   <button class="btn btn-sm pill" onclick="removeItem(${p.id})" aria-label="Remove">✕</button>
+  </div>`}).join('')
+  :`<div class="text-center py-5"><h4 class="fw-bold">Cart is empty</h4><p>Find your next everyday favorite.</p><button class="btn btn-ink" onclick="go('home','shop')">Go shopping</button></div>`;
+ const t=totals();
+ $('#cartSummary').innerHTML=`<h5 class="fw-bold mb-3">Summary</h5>
+  <div class="d-flex justify-content-between"><span>Subtotal</span><b>${rs(t.sub)}</b></div>
+  <div class="d-flex justify-content-between"><span>Shipping</span><b>${t.ship?rs(t.ship):'Free'}</b></div><hr>
+  <div class="d-flex justify-content-between fs-5"><span>Total</span><b>${rs(t.total)}</b></div>
+  <button class="btn btn-ink w-100 mt-3" ${rows.length?'':'disabled'} onclick="toCheckout()">Checkout</button>
+  <button class="btn btn-link text-dark w-100 mt-1" onclick="cart={};saveCart();renderCart()" ${rows.length?'':'disabled'}>Clear cart</button>`;
+}
+
+// ---------- CHECKOUT ----------
+function toCheckout(){
+ if(!user){toast('Log in to checkout');return openAuth('login')}
+ go('checkout');
+}
+function renderCheckout(){
+ if(user&&!$('#coName').value)$('#coName').value=user.name;
+ const t=totals();
+ $('#coSummary').innerHTML=`<h5 class="fw-bold mb-3">Order summary</h5>`+
+  Object.entries(cart).map(([id,q])=>{const p=PRODUCTS.find(x=>x.id==id);return `<div class="d-flex justify-content-between mb-1"><span>${p.n} x ${q}</span><b>${rs(p.p*q)}</b></div>`}).join('')+
+  `<hr><div class="d-flex justify-content-between"><span>Shipping</span><b>${t.ship?rs(t.ship):'Free'}</b></div>
+   <div class="d-flex justify-content-between fs-5 mt-1"><span>Total</span><b>${rs(t.total)}</b></div>`;
+}
+$('#coForm').addEventListener('submit',e=>{
+ e.preventDefault();e.target.classList.add('was-validated');
+ if(!e.target.checkValidity())return;
+ if(!user)return openAuth('login');
+ if(!Object.keys(cart).length){toast('Cart is empty');return go('cart')}
+ const orders=store.get('orders',[]);const t=totals();
+ const id='FC'+Date.now().toString().slice(-6);
+ orders.push({id,email:user.email,items:cart,total:t.total,date:new Date().toISOString()});store.set('orders',orders);
+ $('#doneMsg').textContent=`Demo order ${id} saved in this browser. Total ${rs(t.total)}. No payment, shipment or message has been sent.`;
+ cart={};saveCart();e.target.reset();e.target.classList.remove('was-validated');modal('#doneModal').show();
+});
+
+// ---------- REVIEWS ----------
+function renderReviews(){
+ const all=[...store.get('reviews',[]),...SEED_REVIEWS];
+ $('#reviewList').innerHTML=all.slice(0,6).map((r,i)=>`
+  <div class="col-md-4"><div class="rev" style="background:${COLORS[i%4]}">
+   <div class="stars">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</div>
+   <p class="my-3">${esc(r.t)}</p><b>${esc(r.n)}</b></div></div>`).join('');
+}
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+$('#revForm').addEventListener('submit',e=>{
+ e.preventDefault();const r=store.get('reviews',[]);
+ r.unshift({n:$('#rvName').value.trim(),s:+$('#rvStars').value,t:$('#rvText').value.trim()});
+ store.set('reviews',r);e.target.reset();renderReviews();toast('Review posted ✦');
+});
+
+// ---------- INIT ----------
+renderAuth();renderFilters();renderProducts();renderReviews();saveCart();
+</script>
+</body>
+</html>

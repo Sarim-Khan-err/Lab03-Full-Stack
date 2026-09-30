@@ -1,6 +1,6 @@
 # Task 03 — Bootstrap implementation
 
-Open `index.html` to browse all six projects. The original Lab 2 files are unchanged.
+Open `index.html` or `FITCHECK.html` for the store. The project directory menu and cross-project banners were removed. The original Lab 2 files are unchanged.
 
 | Project | Entry | Bootstrap implementation |
 | --- | --- | --- |
@@ -14,7 +14,7 @@ Open `index.html` to browse all six projects. The original Lab 2 files are uncha
 Bootstrap 5.3.8 is bundled locally in `vendor/` with its MIT license. Custom CSS preserves each project’s identity. Optional Google Fonts require internet; fonts fall back when offline. Fitcheck has application JavaScript; the learning arcade keeps its CSS-driven answer feedback and scoring. No build step is required.
 
 ## Fitcheck photos and demo behavior
-Photos are saved locally in `assets/fitcheck/`; source URLs are recorded in SOURCES.txt. These are styling references, not photographs of actual inventory. The cart uses the same local image as its product card. Original random-image dependencies were removed.
+Nine original AI-generated images are saved in `assets/fitcheck/generated/`: eight matching catalog products and one editorial campaign photo. Prompts are recorded in `PROMPTS.txt`. They depict a fictional collection, not real inventory. Earlier stock photos are retained as unused source assets. The cart uses the same local image as its product card. Original random-image dependencies were removed.
 Fitcheck is a classroom simulation with browser-local accounts, reviews and orders. Use made-up credentials. No backend, payment processing, shipment or real authentication is provided. Nothing is sent when a demo order is placed.
 
 ## Source projects
