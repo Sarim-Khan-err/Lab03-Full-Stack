@@ -1,0 +1,1 @@
+{"name":"cs301-lab7","version":"1.0.0","private":true,"scripts":{"start":"node server.js","student":"node server.js student","test":"node --test"},"engines":{"node":">=22"}}

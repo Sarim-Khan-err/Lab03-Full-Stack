@@ -1,5 +1,9 @@
 # Task 03 — Bootstrap implementation
 
+## Lab Task 07 — Student management and persistent Fitcheck API
+
+Both Lab 7 parts are in [labtask 7](labtask%207/README.md), with run instructions, endpoint documentation and integration tests. Run `npm run student` for the in-memory student system, or `npm start` for the persistent Fitcheck backend from that folder.
+
 Open `index.html` or `FITCHECK.html` for the store. The project directory menu and cross-project banners were removed. The original Lab 2 files are unchanged.
 
 | Project | Entry | Bootstrap implementation |
